@@ -64,6 +64,49 @@
   .journey-camera .shelf-side{width:23%;opacity:.35}
   .journey-camera .shelf-left{left:-5%}.journey-camera .shelf-right{right:-5%}
 }
+
+/* Black editorial palette, with warm white text and restrained amber accents. */
+:root{color-scheme:dark;--paper:#08090a;--ink:#edece7;--green:#b1c8bb;--line:#343737;--orange:#f19b6c}
+body,.masthead,.intro,.journey-layout,.journey-stories,.credits{background:#08090a;color:var(--ink)}
+.masthead{border-bottom-color:#333637}
+.hero,.arrival,.arrival-screen,.journey-camera,.photo,.checkout,.ending,.investigator-sequence{background:#08090a;color:var(--ink)}
+.photo-back{filter:blur(22px) brightness(.28)}
+.journey-photo .photo-back{filter:blur(22px) brightness(.28)}
+.entrance-description,.photo-description{background:#151819;color:#d5d9d5;border-color:#64796e}
+.photo-description .caption-label,.photo-description .caption-source{color:#aebbb2}
+.record{background:#141617;color:var(--ink);border-top-color:#82998b;box-shadow:0 14px 36px #0005}
+.record:after{background:linear-gradient(135deg,#141617 5px,transparent 0) 0 0/10px 10px,linear-gradient(225deg,#141617 5px,transparent 0) 0 0/10px 10px}
+.record-top,.price-records time,.no-number,.quote-attribution,.credits,.motion-line,.pickup-beat p:not(.section-kicker){color:#a9b2ab}
+.section-kicker,.eyebrow,.ending .section-kicker{color:#daa782}
+.price-records strong{color:#ffaf80}
+.story-detail summary{color:#b7cbbf}
+.quote{color:#dbe2dc;border-left-color:#c38d69}
+.investigation-card .body .key-fact{color:#f0f1e9}
+.key-fact{text-decoration-color:#daa78288}
+.status-label{color:#c2d2c6;border-color:#667c6d}
+.opening-lead{color:#dce7dd}
+.start-link{border-bottom-color:#7b8d80}
+.pickup-button,.add-button{background:#30483c;color:#f3f2e9}
+.pickup-button:disabled,.add-button[aria-pressed=true]{background:#26332c;color:#c9d8cc}
+.route a[aria-current=true]{background:#3c5547;color:#f3f2e9}
+.notePill{color:#dcb492;border-top-color:#5a645e}
+.investigator-screen{background:radial-gradient(ellipse at 68% 35%,#343e35 0,#151c18 45%,#08090a 85%);color:var(--ink)}
+.inspection-title h2 em{color:#e3d2b1}
+.inspector-shadow{filter:drop-shadow(0 0 18px #b3c9a52b)}
+.trace-slip{background:#202724;color:#e7eadf;border-top-color:#90a68f;box-shadow:0 8px 20px #0006}
+.trace-number,.trace-slip small{color:#b0bfac}
+.trace-rule{background:#778975}
+.agency-reveal{color:#e1e8dc}
+.agency-reveal>strong{border-color:#9aaa8d}
+.inspection-light{background:linear-gradient(90deg,transparent,#fffbe536,transparent)}
+.aisle-sign{background:#202923;color:#e7ece0}
+.cart-bar{background:#101412f7;color:var(--ink)}
+.cart-count strong,.cart-hint{color:#bacabc}
+.cart-chip{border-color:#576653;color:#aab8a6}
+.cart-chip.in-cart{background:#26332c;color:#d4e2cd;border-color:#72876c}
+.skip{background:#202923;color:#fff}
+@media screen and (min-width:601px){.journey-camera{border-bottom-color:#3e4b43}}
+
 </style></head><body class="entering">
 <a class="skip" href="#intro">본문 바로가기</a>
 <main id="top"><section class="arrival" id="arrival" aria-label="카트 손잡이를 잡은 고객 시점으로 마트에 입장하는 장면"><div class="arrival-screen"><div class="arrival-store"><figure class="photo" data-direction="move"><div class="photo-back" style="background-image:url('assets/photo-01.jpg')"></div><img src="assets/photo-01.jpg" alt="마트를 찾은 고객들이 장을 보고 있다. 강진형 기자" loading="eager" decoding="async"></figure></div><div class="door-frame"><div class="door door-left"><div class="door-handle"></div></div><div class="door door-right"><div class="door-handle"></div></div><div class="door-beam"></div></div><div class="entrance-floor"></div><div class="entrance-cart" id="entranceCart"><svg viewBox="0 0 800 340" aria-hidden="true"><defs>
