@@ -50,7 +50,7 @@
 
 /* Desktop follows the mobile reading flow: pinned scene above one story column. */
 @media screen and (min-width:601px){
-  .journey-layout{display:block;--scene-height:clamp(210px,42svh,400px)}
+  .journey-layout{display:block;--scene-height:clamp(280px,57svh,620px)}
   .journey-camera{height:var(--scene-height);min-height:0;max-height:none;top:calc(var(--header) + var(--host-top));width:100%;border-bottom:1px solid #809282}
   .journey-stories{width:100%;max-width:960px;margin-inline:auto}
   .journey-stories .stop-section{min-height:0;padding:32px 40px 60px;scroll-margin-top:calc(var(--header) + var(--host-top) + var(--scene-height) + 16px)}
@@ -58,8 +58,8 @@
   .journey-stories .record{padding:32px 40px;scroll-margin-top:calc(var(--header) + var(--host-top) + var(--scene-height) + 16px)}
   .journey-stories .photo-description{scroll-margin-top:calc(var(--header) + var(--host-top) + var(--scene-height) + 16px)}
   .journey-stories .record h2{font-size:clamp(28px,2.6vw,39px)}
-  .journey-camera .cart-vehicle{width:min(650px,88vw,99svh)!important;max-width:none}
-  .journey-camera .shelf-product{left:calc(50% + min(27vw,175.5px))}
+  .journey-camera .cart-vehicle{width:min(780px,88vw,106svh)!important;max-width:none}
+  .journey-camera .shelf-product{left:calc(50% + min(27vw,210.6px))}
   .journey-photo .photo img{padding:0 18px 24px}
   .journey-camera .shelf-side{width:23%;opacity:.35}
   .journey-camera .shelf-left{left:-5%}.journey-camera .shelf-right{right:-5%}
@@ -205,7 +205,7 @@ cart.style.transform=`translateX(-50%) translateY(${moving?Math.sin(entry*30)*1.
 const distance=active*130+(entry+exit)*65;cart.style.setProperty('--wheel-angle',distance*8+'deg');world.style.setProperty('--floor-shift',(distance%67)+'px');
 world.style.transform=`perspective(1100px) rotateY(${-yaw*.85}deg) translateX(${-side*.7}%) scale(${1.03+.16*entry})`;world.style.setProperty('--shelf-zoom',1+entry*.20);world.style.setProperty('--shelf-left',entry*-28+'px');world.style.setProperty('--shelf-right',entry*28+'px');
 if(active!==last){photos.forEach((p,i)=>{p.style.opacity=i===active?'1':'0';p.setAttribute('aria-hidden',String(i!==active))});last=active}
-const motionWidth=small?camera.clientWidth:Math.min(camera.clientWidth,650);const pickup=ease(clamp((raw-.32)/.45)),loaded=pickup>=.98?active:active-1;goods.forEach((g,i)=>g.classList.toggle('loaded',i<=loaded||manuallyAdded.has(i)));shelfProduct.dataset.kind=String(active);shelfProduct.style.transform=`translate(-50%,-50%) translate(${-motionWidth*.26*pickup}px,${(camera.offsetHeight*.6-motionWidth*.235)*pickup-camera.offsetHeight*.24*Math.sin(pickup*Math.PI)}px) rotate(${-18*pickup}deg) scale(${1+pickup*.2})`;shelfProduct.style.opacity=raw<.2?'0':pickup>.98?'0':'1';
+const motionWidth=small?camera.clientWidth:Math.min(camera.clientWidth,780);const pickup=ease(clamp((raw-.32)/.45)),loaded=pickup>=.98?active:active-1;goods.forEach((g,i)=>g.classList.toggle('loaded',i<=loaded||manuallyAdded.has(i)));shelfProduct.dataset.kind=String(active);shelfProduct.style.transform=`translate(-50%,-50%) translate(${-motionWidth*.26*pickup}px,${(camera.offsetHeight*.6-motionWidth*.235)*pickup-camera.offsetHeight*.24*Math.sin(pickup*Math.PI)}px) rotate(${-18*pickup}deg) scale(${1+pickup*.2})`;shelfProduct.style.opacity=raw<.2?'0':pickup>.98?'0':'1';
 
 let navActive=active;if(document.getElementById('checkout').getBoundingClientRect().top<readingLine)navActive=6;
 links.forEach((a,i)=>{a.setAttribute('aria-current',String(i===navActive));a.classList.toggle('seen',visited.has(i))});chips.forEach((c,i)=>c.classList.toggle('in-cart',visited.has(i)||manuallyAdded.has(i)));count.textContent=new Set([...visited,...manuallyAdded]).size+' / 6';const range=document.documentElement.scrollHeight-innerHeight;meter.style.width=(range>0?clamp(scrollY/range)*100:0)+'%';}
